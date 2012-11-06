@@ -1,0 +1,1162 @@
+/*********************************************************************************************
+
+Theme Name: Massive News
+Theme URI: http://www.press75.com/
+Description: Designed by Jason Schuller
+Version: 2.5.7
+Author: Press75.com
+Author URI: http://www.press75.com/
+
+**********************************************************************************************
+
+Designed and Built by Jason Schuller - theSevenFive.com
+
+CSS, XHTML and Design Files are all Copyright 2007-2010 Circa75 Media, LLC
+
+Be inspired, but please don't steal :)
+
+**********************************************************************************************
+
+1.  Basic Setup  -----------------------  All Pages
+2.  Headings  --------------------------  All Pages
+3.  Paragraphs, Lists and Tables  ------  All Pages
+4.  Content Containers  ----------------  All Pages
+5.  Main Content Wrappers --------------  All Pages
+6.  Header Styles  ---------------------  header.php
+7.  Navigation and Menu Styles  --------  header.php
+8.  GravityForms and Form Styles  ------  index.php, single.php, page.php
+9.  Article Styles  --------------------  index.php, single.php, page.php
+10. Featured Content -------------------  index.php
+11. WordPress Specific Styles ----------  index.php, single.php, page.php
+12. Comment Styles ---------------------  single.php
+13. Sidebar Widgets  -------------------  single.php
+14. Footer Styles  ---------------------  footer.php
+
+**********************************************************************************************/
+
+
+/********************************************************************************************* 
+
+1.  Basic Setup  -----------------------  All Theme Files
+
+*********************************************************************************************/
+body {
+background: #E7E7E7 url(images/bg.jpg) repeat;
+color: #333333;
+font-size: 11px;
+padding: 0;
+}
+
+a {
+color: #9A3328;
+text-decoration: none;
+}
+
+a:hover {
+color: #555555;
+}
+
+.container_16 {
+background: #FFFFFF;
+}
+
+
+/********************************************************************************************* 
+
+2.  Headings  --------------------------  All Theme Files
+
+*********************************************************************************************/
+h1, h2, h3, h4, h5, h6 {
+line-height: 1.2em;
+margin-bottom: .3em;
+}
+
+h2 {margin-top: 1em;}
+h5 {font-size: 1.2em;}
+
+h1 a {
+font-weight: normal;
+}
+
+h1#branding {
+font-weight: normal;
+font-size: 6em;
+font-family: Georgia, Times, serif;
+text-align: left;
+float: left;
+padding: 0 0 0 10px;
+margin: 0 0 0 0;
+}
+
+h1#branding a {
+color: #FFFFFF;
+}
+
+h1#branding a:hover {
+color: #999999;
+}
+
+img.branding {
+padding: 0 0 0 10px;
+float: left;
+}
+
+h2#page-heading {
+font-weight: normal;
+font-family: Georgia, Times, serif;
+padding: .5em;
+margin: 0 0 10px 0;
+border-bottom: 1px solid #ccc;
+}
+
+
+/********************************************************************************************* 
+
+3.  Paragraphs, Lists and Tables  ------  All Theme Files
+
+*********************************************************************************************/
+p {
+	font-size:120%;
+    margin-bottom: 1em;
+}
+
+blockquote {
+font-family: Georgia, 'Times New Roman', serif;
+padding-left: 1em;
+border-left: 4px solid #CCCCCC;
+}
+
+blockquote cite {
+font-size: .9em;
+}
+
+ul, ol {
+padding-top: 0;
+}
+
+table {
+width:100%;
+border:1px solid #BBBBBB;
+margin-bottom:10px;
+}
+
+col.colC {
+width:8em;
+}
+
+th, td {
+padding:.2em 1em;
+text-align:left;
+}
+
+thead th {
+border-bottom:2px solid #888888;
+background:#BBBBBB;
+padding:.4em 1em .2em;
+}
+
+thead th.table-head {
+font-size:1em;
+font-weight:normal;
+text-transform:uppercase;
+color:#FFFFFF;
+background:#555555;
+border:1px solid #555555;
+}
+
+tbody th, tbody td {
+border-top:1px solid #BBBBBB;
+border-bottom:1px solid #BBBBBB;
+background:#EEEEEE;
+}
+
+tbody tr.odd th,
+tbody tr.odd td {
+background:#FFFFFF;
+}
+
+tfoot th,
+tfoot td {
+border-top:2px solid #666666;
+background:#EEEEEE;
+}
+
+tfoot tr.total th,
+tfoot tr.total td {
+border-top:6px double #666666;
+}
+
+tfoot tr.total th {
+text-transform:uppercase;
+}
+
+th.currency,
+td.currency {
+text-align:right;
+}
+
+.clearboth {
+	clear:both;
+}
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+}
+
+/********************************************************************************************* 
+
+4.  Content Containers  ----------------  All Theme Files
+
+*********************************************************************************************/
+.box {
+background: #F8F8F8;
+margin-bottom: 10px;
+padding: 10px 10px 1px 10px;
+border: 1px solid #E1E1E1;
+}
+
+.box h2 {
+font-size: 1em;
+font-weight: normal;
+text-transform: uppercase;
+color: #9BAAB5;
+background: #192227;
+margin: -11px -11px 0 -11px;
+padding: 8px 0 6px 12px;
+}
+
+.box h2 a, .box h2 a.visible {
+color: #9BAAB5;
+font-weight: normal;
+}
+
+.box h2 a:hover {
+color: #FFFFFF;
+background: none;
+}
+
+.block {
+padding-top:10px;
+margin-bottom: 30px;
+}
+
+.entry img {
+padding: 5px;
+border: 1px solid #BBBBBB;
+background: #FFFFFF;
+}
+
+div.menu {
+padding: 0;
+}
+
+div.menu h2 {
+margin: 0;
+}
+
+div.menu .block {
+padding-top: 0;
+}
+
+.main_wrap {
+-webkit-border-radius: 8px;
+padding: 10px 10px 0 10px;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+
+.Social_Widget {
+	background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    position: absolute;
+    right: 62px;
+    top: 10px;
+}
+
+/********************************************************************************************* 
+
+5. Main Content Wrappers -------------------------  All Theme Files
+
+*********************************************************************************************/
+#content_left_wrapper {
+float: left;
+width: 100%;
+}
+
+#content_right_wrapper {
+width: 610px;
+float: left;
+margin-left: -610px;
+}
+
+.content_left {
+margin-right: 620px;
+}
+
+.content_left_single {
+margin-right: 330px;
+}
+
+.video {
+width: auto;
+margin: 20px 0 20px 0;
+text-align: center;
+border: 1px solid #BBBBBB;
+padding: 10px;
+}
+
+.time {
+background: url(images/date.jpg) left no-repeat;
+padding: 4px 0 4px 22px;
+margin: 0 10px 0 0;
+}
+
+.categories {
+background: url(images/categories.jpg) left no-repeat;
+padding: 4px 0 4px 22px;
+margin: 0 10px 0 0;
+}
+
+.discuss {
+background: url(images/comments.jpg) left no-repeat;
+padding: 4px 0 4px 22px;
+margin: 0 10px 0 0;
+}
+
+.editlink {
+background: url(images/edit.jpg) left no-repeat;
+padding: 4px 0 4px 22px;
+margin: 0 10px 0 0;
+}
+
+.content_center {
+width: 320px;
+float: right;
+margin-right: 10px;
+}
+
+
+/********************************************************************************************* 
+
+6.  Header Styles  ---------------------  header.php
+
+*********************************************************************************************/
+#head_wrap {
+padding: 0 10px 10px 10px;
+}
+
+#header {
+background: #bee0eb;
+border-bottom: 1px solid #435664;
+padding: 20px 0 20px 0;
+}
+
+.header_ad {
+float: right;
+padding: 4px;
+margin: 0 10px 0 0;
+background: #192227;
+border: 1px solid #435664;
+}
+
+
+/********************************************************************************************* 
+
+7.  Navigation and Menu Styles  --------  header.php
+
+*********************************************************************************************/
+#navigation {
+background: #192227;
+font-size:16px;
+}
+
+.menu, .menu * { /* SuperFish Menu Styles */
+margin: 0;
+padding: 0;
+list-style: none;
+}
+
+.menu {
+float: left;
+margin-left:405px;
+}
+
+.menu a {
+display: block;
+position: relative;
+}
+
+.menu a, .menu a:visited  {
+color: #9BAAB5;
+text-transform: uppercase;
+font-weight: normal;
+}
+
+.menu a:hover  {
+color: #B9B9B9;
+}
+
+.menu ul li {
+width: 100%;
+}
+
+.menu ul {
+position: absolute;
+top: -15000px;
+width: 160px; /* Left Offset of Sub-Menus Need to Match */
+}
+
+.menu li:hover ul, 
+.menu li.sfHover ul {
+left: -15px;
+top: 22px; /* Match Top UL List Item Height */
+z-index: 10000;
+}
+
+ul.menu li:hover li ul, 
+ul.menu li.sfHover li ul {
+top: -15000px;
+}
+
+ul.menu li li:hover ul, 
+ul.menu li li.sfHover ul {
+left: 160px; /* Match ul width. */
+top: 0;
+}
+
+ul.menu li li:hover li ul, 
+ul.menu li li.sfHover li ul {
+top: -15000px;
+}
+
+ul.menu li li li:hover ul, 
+ul.menu li li li.sfHover ul {
+left: 160px; /* Match ul Width. */
+top: 0;
+}
+
+.menu li {
+/*border-right: 1px solid #435664;*/
+float: left;
+position: relative;
+margin: 0 0 0 0;
+padding: 6px 10px 6px 10px;
+}
+
+.menu li:hover {
+background: url(images/current.png) bottom center no-repeat;
+visibility: inherit; /* Fixes IE7 Sticky Bug */
+}
+
+.menu li ul {
+background: #FFFFFF;
+width: 125px;
+margin: 10px 0 0 10px;
+padding: 10px 40px 10px 15px;
+}
+
+.menu li ul li {
+border: none;
+text-transform: none;
+}
+
+.menu li ul a:link, .menu li ul a:visited {
+color: #555555;
+}
+
+.menu li ul a:hover {
+color: #888888;
+}
+
+.menu li ul li:hover {
+background: none;
+}
+
+.menu li li {
+background: none;
+margin: 0 0 0 0;
+padding: 0 0 0 0;
+text-transform: none;
+}
+
+.menu li li ul {
+background: #FFFFFF;
+margin: -10px 0 0 -50px;
+}
+
+
+/********************************************************************************************* 
+
+8.  GravityForms and Form Styles  ------  index.php, single.php, page.php 
+
+*********************************************************************************************/
+form {
+overflow:hidden;
+}
+
+fieldset {
+border:1px solid #BBBBBB;
+padding:10px;
+position:relative;
+background:#E9E9E9;
+margin-bottom:10px;
+}
+
+legend {
+font-size:1.1em;
+padding:.4em .8em;
+background:#FFFFFF;
+border:1px solid #BBBBBB;
+}
+
+fieldset.login p {
+margin-bottom:1em;
+margin-top:0pt;
+}
+
+fieldset p label {
+width:98%;
+}
+
+fieldset p input {
+width:98%;
+}
+
+fieldset p select {
+width:99%;
+}
+
+fieldset.login p label {
+float:left;
+line-height:2em;
+margin-right:3%;
+text-align:right;
+width:32%;
+}
+
+fieldset.login p input {
+width:60%;
+}
+
+fieldset.login input.button {
+margin-left:35%;
+}
+
+form p.notice {
+font-weight:bold;
+}
+
+input.search.text {
+width:66%;
+}
+
+input.search.button {
+width:28%;
+margin-left:2%;
+}
+
+
+/********************************************************************************************* 
+
+9.  Article Styles  --------------------  index.php, single.php, page.php
+
+*********************************************************************************************/
+#articles {
+padding-top:0;
+}
+
+.article {
+margin-top: 20px;
+}
+
+.main_article {
+font-size: 12px;
+margin-top: 30px;
+}
+
+.first_main_article {
+font-size: 12px;
+margin-top: 2px;
+padding-bottom:40px;
+}
+
+.article h1{
+	 border-top: 1px dotted #999999;
+	 padding-top:10px;
+}
+.article h2 {
+font-size:2em;
+font-weight:normal;
+text-transform:none;
+color:#333333;
+background:transparent;
+padding:0;
+margin:0;
+border:none;
+}
+
+.article h3 {
+margin-bottom:.2em;
+font-size:1.6em;
+}
+
+.box .first {
+border-top:none;
+margin-top: 12px;
+}
+
+.article h4 {
+font-size:1.2em;
+margin-bottom:.5em;
+}
+
+.article a.image {
+border: 1px solid #BBBBBB;
+float: left; 
+margin: 3px 15px 5px 0; 
+padding: 5px;
+}
+
+.article a.image:hover {
+border:1px solid #666666;
+}
+
+.article a.image img {
+float:left; 
+}
+
+.meta {
+color:#666666;
+border-top:1px dotted #E0DFDF;
+border-bottom:1px dotted #E0DFDF;
+margin-bottom:.8em;
+padding: 4px 0 4px 0;
+}
+
+.meta a:link, .meta a:visited {
+font-weight: normal;
+color: #666666;
+}
+
+.meta a:hover {
+font-weight: normal;
+color: #333333;
+text-decoration: underline;
+}
+
+
+/********************************************************************************************* 
+
+10. Featured Content -------------------  index.php
+
+*********************************************************************************************/
+.boxgrid{ 
+float:left; 
+overflow: hidden; 
+position: relative; 
+}
+
+.boxgrid img{ 
+position: absolute; 
+top: 0; 
+left: 0; 
+border: 0; 
+}
+
+.boxgrid p{ 
+padding: 0 20px 0 10px;
+}
+
+.boxgrid h4 {
+font-size: 16px;
+padding: 10px 0 0 10px;
+margin: 0;
+}
+
+.boxcaption{ 
+background: url(images/caption.png) repeat; 
+float: left; 
+position: absolute; 
+height: 186px; 
+width: 100%;
+}
+
+.captionfull .boxcaption {
+top: 0;
+left: 0;
+}
+
+.caption .boxcaption {
+top: 186;
+left: 0;
+}
+
+.last_box {
+margin-right: 0px;
+border: none;
+height: 175px;
+}
+
+.featured_box {
+margin-right: 10px;
+border: none;
+height: 175px;
+}
+
+.featured_box h2, .last_box h2 {
+margin: -10px -10px 0 -10px;
+}
+
+a.featured_link {
+width: 100%;
+height: 150px;
+float: left;
+}
+
+/********************************************************************************************* 
+
+11. WordPress Specific Styles -------------------------  All Theme Files
+
+*********************************************************************************************/
+.wp-caption {
+border:1px solid #BBBBBB;
+background: none;
+margin-bottom: 5px;
+}
+
+.wp-caption-text {
+color:#FFFFFF;
+text-align:center;
+padding-top: 5px;
+padding-bottom: 5px;
+width: auto;
+font-weight: bold;
+}
+
+code {
+font: 1.1em 'Courier New', Courier, Fixed;
+}
+
+img.centered {
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+img.alignright {
+padding: 5px;
+margin: 0 0 2px 10px;
+display: inline;
+}
+
+img.alignleft {
+padding: 5px;
+margin: 0 10px 2px 0;
+display: inline;
+}
+
+.alignright {
+float: right;
+margin-left: 15px;
+}
+
+.alignleft {
+float: left;
+margin-right: 15px;
+}
+
+#wp-calendar {
+empty-cells: show;
+margin: 10px auto 0;
+width: 155px;
+}
+
+#wp-calendar #next a {
+padding-right: 10px;
+text-align: right;
+}
+
+#wp-calendar #prev a {
+padding-left: 10px;
+text-align: left;
+}
+
+#wp-calendar a {
+display: block;
+}
+
+#wp-calendar caption {
+text-align: center;
+width: 100%;
+}
+
+#wp-calendar td {
+padding: 3px 0;
+text-align: center;
+}
+
+#wp-calendar td.pad:hover { /* Doesn't work in IE */
+background-color: #fff; }
+
+acronym, abbr, span.caps {
+cursor: help;
+}
+
+acronym, abbr {
+border-bottom: 1px dashed #999;
+}
+
+blockquote {
+background: #ddd;
+margin: 15px 30px 0 10px;
+padding-left: 20px;
+border-left: 5px solid #ddd;
+}
+
+blockquote cite {
+margin: 5px 0 0;
+display: block;
+}
+
+.center {
+text-align: center;
+}
+
+.hidden {
+display: none;
+}
+
+hr {
+display: none;
+}
+
+a img {
+border: none;
+}
+
+.aligncenter,
+div.aligncenter {
+display: block;
+margin-left: auto;
+margin-right: auto;
+}
+
+.wp-caption {
+text-align: center;
+padding: 5px 0px 0 0px;
+margin-bottom: 5px;
+}
+
+.wp-caption img {
+margin: 0;
+padding: 0;
+border: 0 none;
+}
+
+.wp-caption p.wp-caption-text {
+font-size: 12px;
+line-height: 17px;
+padding: 4px 4px 5px;
+margin: 0;
+background: none;
+color: #333;
+}
+
+
+/********************************************************************************************* 
+
+12. Comment Styles -------------------------  All Theme Files
+
+*********************************************************************************************/
+#comments {
+margin: 0 0 0 0;
+}
+
+#comments h3 {
+font-size: 16px;
+font-weight: normal;
+color: #181512;
+margin: 5px 0 0 0;
+padding: 0;
+}
+
+.comment-author {
+font-size: 16px;
+font-weight: normal;
+}
+
+.comment-meta {
+font-size: 10px;
+font-weight: normal;
+margin: 0 0 10px 0;
+}
+
+.avatar {
+float: right;
+display: inline;
+padding: 3px;
+margin: 5px 0 4px 8px;
+border:1px solid #BBBBBB;
+}
+
+#comment {
+width: 510px;
+font: 12px arial,helvetica,verdana,sans-serif;
+}
+
+h2.commh2 {
+font-size: 1.4em !important;
+padding: 0 0 5px;
+color: #333 !important;
+}
+
+ol.commentlist {
+margin: 10px 0 20px;
+padding: 0;
+list-style: none;
+font-size: 12px;
+}
+
+ol.commentlist p {
+margin-bottom: 10px;
+}
+
+ol.commentlist cite {
+font-style: normal;
+font-weight: bold;
+margin: 0;
+padding: 0;
+}
+
+ol.commentlist li.alt {
+padding: 0 0 15px 0;
+margin: 0 0 15px 0;
+border-bottom: 1px solid #BBBBBB;
+}
+
+ol.commentlist li {
+padding: 0 0 15px 0;
+margin: 0 0 15px 0;
+border-bottom: 1px solid #BBBBBB;
+}
+
+ol.commentlist li div.reply {
+background: url(images/submit.jpg) left no-repeat;
+height: 20px;
+border: none;
+padding: 5px 0 0 20px;
+color: #000;
+cursor: pointer;
+}
+
+ol.commentlist li div.reply:hover {
+color: #555;
+}
+
+ol.commentlist li div.reply a {
+font-weight: normal;
+}
+
+ol.commentlist li ul.children { 
+list-style: none; 
+margin: 0;
+padding: 0;
+text-indent: 0; 
+}
+
+ol.commentlist li ul.children li {
+background: none;
+margin: 0;
+padding: 10px 0 0px 40px;
+border: none;
+color: #555;
+}
+
+ol.commentlist li ul.children li.alt {
+background: none;
+margin: 0;
+padding: 10px 0 0px 40px;
+border: none;
+color: #555;
+}
+
+ol.commentlist li ul.children li.depth-2 { margin:0; }
+ol.commentlist li ul.children li.depth-3 { margin:0; }
+ol.commentlist li ul.children li.depth-4 { margin:0; }
+ol.commentlist li ul.children li.depth-5 { margin:0; }
+
+input#submit {
+background: url(images/submit.jpg) left no-repeat;
+height: 20px;
+border: none;
+padding: 0 0 0 20px;
+color: #000;
+cursor: pointer;
+}
+
+* + html input#submit {
+padding: 0;
+}
+
+input#submit:hover {
+color: #555;
+}
+
+
+#comment, #author, #email, #url {
+background: #FFF url(images/fields.jpg) top left repeat-x;
+border: 1px solid #E5E3D8;
+color: #404040;
+margin: 0 0 10px 0;
+padding: 5px;
+}
+
+#author, #email, #url {
+width: 200px;
+}
+
+#comment {
+margin: 10px 0 10px 0;
+height: 200px;
+width: 98%;
+}
+
+#respond {
+padding: 0;
+margin: 0;
+}
+
+
+/********************************************************************************************* 
+
+13. Sidebar Widgets  -------------------------  All Theme Files
+
+*********************************************************************************************/
+.widget_block {
+margin: 0;
+padding: 15px 0 15px 0;
+}
+
+.p75_related_posts .widget_block { padding: 0; }
+.cat_posts .widget_block { padding: 0; }
+.widget_tag_cloud .widget_block { padding: 0; }
+.widget_text .widget_block { padding: 10px 0; }
+.p75_sidebar_ads .widget_block { padding: 0; }
+.content_center .p75_sidebar_ads .widget_block { padding: 0 0 0 23px; }
+
+.widget ul {
+list-style: none;
+margin: 10px 0 10px 0;
+padding: 0;
+border-top: 1px solid #BBBBBB;
+}
+
+.widget li {
+padding:4px 0;
+margin: 0;
+border-bottom:1px solid #BBBBBB;
+}
+
+.widget li:hover {
+background: #EEE;
+}
+
+.widget p {
+margin: 10px 0 10px 0;
+}
+
+.content_right {
+width: 280px;
+float: right;
+}
+
+#search_submit {
+margin: 0;
+padding: 0;
+border: 0;
+}
+
+#search_form input {
+border: 1px solid #E5E3D8;
+padding: 2px;
+margin: 0;
+color: #404040;
+background: #FFF url(images/fields.jpg) top left repeat-x;
+width: 252px;
+}
+
+.p75_sidebar_ads h2 {
+margin-bottom: 12px;
+}
+
+.p75_sidebar_ads {
+padding-bottom: 8px;
+}
+
+.p75_sidebar_ads img {
+margin: 0 2px 4px 2px;
+}
+
+* + html .p75_sidebar_ads img {
+margin: 0 4px 4px 0;
+float: none;
+}
+
+.content_right ul {
+	list-style: none;
+}
+
+.author-name,
+.author-description{
+	font-size:120%;
+}
+/********************************************************************************************* 
+
+14. Footer Styles  ---------------------  footer.php
+
+*********************************************************************************************/
+#footer_wrap {
+padding: 10px 10px 0 10px;
+margin-bottom: 0px;
+}
+
+.pagination {
+font-size: 14px;
+padding: 5px 5px 5px 10px;
+}
+
+.pagination a {
+font-weight: normal;
+}
+
+#footer {
+background: #192227;
+padding: 10px;
+color: #FFFFFF;
+}
+
+#footer h4 {
+font-size: 12px;
+font-weight: normal;
+text-transform: uppercase;
+}
+
+#footer p {
+font-size: 10px;
+margin: 0;
+padding: 0;
+color: #9BAAB5;
+}
+
+#footer a {
+color: #9BAAB5;	
+font-weight: normal;
+}
+
+#footer a:hover {
+text-decoration: underline;
+}
