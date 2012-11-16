@@ -9,8 +9,8 @@ Code snippets for various other reasons.
 11/15/12
 NCEM : This is for the old Minimum Genesis theme, includes the following:
 
-functions.php
-home.php: ortfolio section is embedded within Featured widget section so latter will wrap text around the fomrer.  Also see style.css.  
+functions.php: uses the Custom Field called Background, and takes the URL value to create the background image function ncem_background_image()
+home.php: portfolio section is embedded within Featured widget section so latter will wrap text around the fomrer.  Also see style.css.  
 site-map.php :create a site map from the 404 page
 style.css : The styling for the other items in this folder, also a styles button on line 215 #header .widget-area
 
