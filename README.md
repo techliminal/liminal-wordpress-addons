@@ -6,6 +6,8 @@ WordPress Addons from Tech Liminal (page templates, function snippets, and more)
 Code snippets for various other reasons.
 
 ==========================
+
+
 11/15/12
 NCEM : This is for the old Minimum Genesis theme, includes the following:
 
@@ -13,6 +15,7 @@ functions.php: uses the Custom Field called Background, and takes the URL value 
 home.php: portfolio section is embedded within Featured widget section so latter will wrap text around the fomrer.  Also see style.css.  
 site-map.php :create a site map from the 404 page
 style.css : The styling for the other items in this folder, also a styles button on line 215 #header .widget-area
+ncem.css: This is a custom css for NCEM for the jQuery Accordion Menu widget.  It is found under plugins/jquery-vertical-accordion-menu/skins
 
 11/06/2012
 
