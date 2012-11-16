@@ -3,9 +3,16 @@ liminal-wordpress-addons
 
 WordPress Addons from Tech Liminal (page templates, function snippets, and more)
 
-Code snippes for various other reasons.
+Code snippets for various other reasons.
 
 ==========================
+11/15/12
+NCEM : This is for the old Minimum Genesis theme, includes the following:
+
+functions.php
+home.php: ortfolio section is embedded within Featured widget section so latter will wrap text around the fomrer.  Also see style.css.  
+site-map.php :create a site map from the 404 page
+style.css : The styling for the other items in this folder, also a styles button on line 215 #header .widget-area
 
 11/06/2012
 
