@@ -14,7 +14,7 @@ add_image_size( 'portfolio', 160, 100, TRUE );
 
 
 /** Add suport for custom background */
-/* This uses the Custom Field called Background, and takes the URL value to create the background image 
+/* This uses the Custom Field called Background, and takes the URL value to create the background image.
 */
 add_custom_background();
 
