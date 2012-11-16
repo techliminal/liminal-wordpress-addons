@@ -21,7 +21,7 @@ function minimum_home_genesis_meta() {
  * Display widget content for "featured", "welcome"  and "portfolio" sections.
  * Please note that the Portfolio section below, which is Home Right for Ncem,
  * us embedded inside the Featured widget section so that the latter will text wrap
- * around the former
+ * around the former.
  */
 function minimum_home_loop_helper() {
 
