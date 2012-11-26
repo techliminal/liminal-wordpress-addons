@@ -1,0 +1,4 @@
+[one-half first]This is the text I’d like to place in the first column.
+<img class="alignleft size-full wp-image-523" title="20120711__eoak0712hadari~1_VIEWER" src="http://www.oaklandeffect.com/wp-content/uploads/2012/07/20120711__eoak0712hadari1_VIEWER1.jpg" alt="" width="154" height="150" />[end-column][one-half]And this is the text I’d like to go in the second column.
+<img class="alignleft size-thumbnail wp-image-579" title="Photo 16" src="http://www.oaklandeffect.com/wp-content/uploads/2012/09/Photo-16-150x150.jpg" alt="" width="150" height="150" />
+[end-column]
