@@ -7,6 +7,9 @@ Code snippets for various other reasons.
 
 ==========================
 
+11/26/12
+Two Column shortcode : As used for Oakland Effect, an example with text and images.  Note that shortcodes must be added in HTML view in the editor with NO spaces between the shortcodes and the content.
+
 
 11/15/12
 NCEM : This is for the old Minimum Genesis theme, includes the following:
