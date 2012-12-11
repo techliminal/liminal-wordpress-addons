@@ -1,0 +1,9 @@
+/* This is a custom css for NCEM for the jQuery Accordion Menu widget.  It is found under plugins/jquery-vertical-accordion-menu/skins
+*/
+#dc_jqaccordion_widget-%ID%-item{}
+#dc_jqaccordion_widget-%ID%-item ul, #dc_jqaccordion_widget-%ID%-item ul, #dc_jqaccordion_widget-%ID%-item ul li {margin: 0; padding: 0; border: none; list-style: none;}
+#dc_jqaccordion_widget-%ID%-item ul a {background-repeat: no-repeat; background-position: 10px center; padding: 5px 5px 5px 32px ; text-decoration:none; display: block; }
+#dc_jqaccordion_widget-%ID%-item ul ul a {}
+#dc_jqaccordion_widget-%ID%-item ul a.dcjq-parent {background-image: url(skins/images/plus_grey.png); }
+#dc_jqaccordion_widget-%ID%-item ul a.dcjq-parent.active {background-image: url(skins/images/minus_grey.png); font-weight: bold; }
+#dc_jqaccordion_widget-%ID%-item ul a:hover {}
