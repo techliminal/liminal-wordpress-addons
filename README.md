@@ -7,6 +7,11 @@ Code snippets for various other reasons.
 
 ==========================
 
+12/11/12
+book-publisher: custom search which sorts results by post type with appropriate headers
+
+microscope-site: microscope.php added, a custom template to display microscope in a grid format with jquery animation.
+
 11/26/12
 Two Column shortcode : As used for OE site, an example with text and images.  Note that shortcodes must be added in HTML view in the editor with NO spaces between the shortcodes and the content.
 
