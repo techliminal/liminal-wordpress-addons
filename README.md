@@ -7,6 +7,12 @@ Code snippets for various other reasons.
 
 ==========================
 
+1/7/13
+I'm putting this link here, for lack of a better organizational idea at the moment.
+WordPress MySQL wrangling at  ammist / change_urls.sql:
+
+https://gist.github.com/1183000
+
 12/11/12
 book-publisher: custom search which sorts results by post type with appropriate headers
 
