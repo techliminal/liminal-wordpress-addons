@@ -6,6 +6,8 @@ WordPress Addons from Tech Liminal (page templates, function snippets, and more)
 Code snippets for various other reasons.
 
 ==========================
+1/14/13
+pet-delivery: Gravity Form customization of radio buttons and sliders using jQuery
 
 1/7/13
 I'm putting this link here, for lack of a better organizational idea at the moment.
