@@ -52,66 +52,132 @@ function heyday_search_result_postinfo(){
 }
 
 /* --------------  Custom Search loop ---------------- */
-$search_term = get_search_query();
-$post_type = isset($_REQUEST['post_type']) ? $_REQUEST['post_type'] : '';
-global $loop_counter;
-global $the_cat;
+
 function heyday_search_loop(){  
-  $loop_counter = 0;
-	if ( have_posts() ) : while ( have_posts() ) {
-	  the_post(); // the loop
-    global $post;
-	$type_title = $post->post_type; 
-	global $last_type_title;
-	    // skip past all the event posts
-    if ($post->post_type === 'event'){
-      continue;
-    }
-	if (empty($post->post_title)){
-		continue;
-	}
-	if ($post->post_type === 'page'){  // remove pages
-      continue;
-    } 
-	else {
-		if ($last_type_title != $type_title){
-			if ($type_title === 'person'){
-				echo "<h2> People </h2>";
-			}
-			else {
-				echo "<h2>" . ucwords($type_title) . "s </h2>";
-				$last_type_title = $type_title;
-			}
-		} 
-		search_show_post();
-	    $loop_counter++;
-
-	}
-  } /** end of one post **/
-
-	do_action( 'genesis_after_endwhile' );
-	else : /** if no posts exist **/
-	do_action( 'genesis_loop_else' );
-	endif; /** end loop **/
-}
-
-function heyday_search_loop_pages(){  // add pages back at end of page
-    $loop_counter = 0;
-	if ( have_posts() ) : while ( have_posts() ) {
-	  the_post(); // the loop
-	  global $post;
+	$search_term = get_search_query();
 	
-	if ($post->post_type === 'page'){ 
-	    echo "<h2> Pages</h2>";
-   	 	search_show_post();
-		$loop_counter++;
+	$post_type = isset($_REQUEST['post_type']) ? $_REQUEST['post_type'] : '';
+	global $loop_counter;
+	global $the_cat;
+	
+	global $wp_query;
+	
+	$original_query = $wp_query->query_vars;
+	
+	$got_results = false;
+	
+	// get the books
+	if ($post_type == 'book' || $post_type == ''){
+		$heyday_query = $wp_query->query_vars;
+		$args = array(
+					'order' =>'ASC',
+					'orderby'=>'title',
+					'post_type' =>'book'
+		 );
+		 $query_args = wp_parse_args($args, $heyday_query);
+		 $books = array();
+		 $book_ids = array();
+	
+			$books_1 = get_posts($query_args);
+			foreach($books_1 as $book){
+				$books[]= $book;
+				$book_ids[] = $book->ID;
+			}
+			
+			$tag = get_term_by('name', $query_args['s'], 'post_tag');
+			if ($tag){
+				$query_args = wp_parse_args(array('tag_id' => $tag->term_id, 'posts_not_in'=>$book_ids), $query_args);
+			
+				unset ($query_args['s']);		
+				$books_2 = get_posts($query_args);
+				foreach($books_2 as $book){
+					$books[] = $book;
+				}
+			}
+						
+			usort($books, 'heyday_compare_post_titles');
+
+			if (count($books)){
+				echo '<h2>Books</h2>';
+				$got_results = true;
+			}
+			foreach ($books as $book){	
+				global $post;
+				$post = $book;
+				search_show_post(); 
+				echo '<div class="clear"></div>'; 
+			}
 	}
-  } /** end of one post **/
-	do_action( 'genesis_after_endwhile' );
-	else : /** if no posts exist **/
-	do_action( 'genesis_loop_else' );
-	endif; /** end loop **/
+
+	if ($post_type == 'person' || $post_type == ''){	
+		// get the authors
+		$args = array(
+			'order' =>'ASC',
+			'orderby'=>'title',
+			'post_type' =>'person'
+		 );
+		 $query_args = wp_parse_args($args, $original_query);
+	
+		 $people  = new WP_Query($query_args);
+	
+		 if ($people->have_posts() ) {
+			 echo '<h2>Bios</h2>';
+			 $got_results = true;
+
+			 while ( $people->have_posts() ){
+					$people->the_post();
+					search_show_post();  
+			 } 
+		 }
+	}
+	
+	if ($post_type == 'post' || $post_type == ''){
+		// get the blog content
+		$heyday_query = $wp_query->query_vars;
+		$args = array(
+					'order' =>'ASC',
+					'orderby'=>'title',
+					'post_type' => array('post')
+		 );
+	
+			// get the blog posts
+		 $query_args = wp_parse_args($args, $heyday_query);
+	
+		 $blogs_1 = new WP_Query($query_args);
+		 if ($blogs_1->have_posts() ) {
+			 echo '<h2>From the Blog</h2>';
+			 $got_results = true;
+			 
+			 while ( $blogs_1->have_posts() ){
+					$blogs_1->the_post();
+					global $post;
+					search_show_post();  
+			 } 
+		 }
+	}
+	
+	if (!$got_results){
+		echo "Sorry, we couldn't find anything matching your search terms";
+	}
 }
+
+//function heyday_search_loop_pages(){  // add pages back at end of page
+//    $loop_counter = 0;
+//	if ( have_posts() ) : while ( have_posts() ) {
+//	  the_post(); // the loop
+//	  global $post;
+//	
+//	if ($post->post_type === 'page'){ 
+//	    echo "<h2> Pages</h2>";
+//   	 	search_show_post();
+//		$loop_counter++;
+//	}
+//  } /** end of one post **/
+//	do_action( 'genesis_after_endwhile' );
+//	else : /** if no posts exist **/
+//	do_action( 'genesis_loop_else' );
+//	endif; /** end loop **/
+//}
 
 function search_show_post() {
 	do_action( 'genesis_before_post' );
@@ -125,7 +191,7 @@ function display_search_widget_with_filter(){
  
  /* ------  Page Rendering ------- */
  
-    add_filter('posts_orderby', 'heyday_posttype' );
+    //add_filter('posts_orderby', 'heyday_posttype' );
 
     
     add_filter('genesis_pre_get_option_site_layout','__genesis_return_full_width_content');
@@ -135,11 +201,11 @@ function display_search_widget_with_filter(){
 
     remove_action('genesis_loop', 'genesis_do_loop');
     add_action('genesis_loop', 'heyday_search_loop');
-	add_action('genesis_loop', 'heyday_search_loop_pages');
+	//add_action('genesis_loop', 'heyday_search_loop_pages');
 
     remove_action('genesis_post_content', 'genesis_do_post_image');
     add_action('genesis_before_post_title', 'genesis_do_post_image', 5);
-    add_action('genesis_before_post_title', 'heyday_display_post_type_description', 10);
+    //add_action('genesis_before_post_title', 'heyday_display_post_type_description', 10);
 
     remove_action('genesis_before_post_content', 'genesis_post_info');
     add_action('genesis_before_post_content', 'heyday_search_result_postinfo');
